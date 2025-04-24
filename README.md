@@ -1,37 +1,68 @@
-# Perform Exploratory Data Analysis on Retail Data with Python
+# Retail Data Analysis with Python
 
 ## Overview
-This project aims to conduct exploratory data analysis (EDA) on transactional data from an online retail store. By analyzing this data, we aim to gain insights into sales trends, customer behavior, and popular products, ultimately assisting in making key business decisions.
+This project performs exploratory data analysis (EDA) on transactional data from an online retail store. The goal is to uncover insights into sales trends, customer behavior, and product performance to support data-driven decision-making.
 
-## Project Scenario
-As an entry-level data analyst at an online retail company, we are tasked with analyzing transactional data. This dataset contains information about customer purchases, including product details, quantities, prices, and timestamps. Our goal is to explore and analyze this dataset to uncover patterns, outliers, and correlations, which will help in making data-driven decisions to optimize the store's operations and improve customer satisfaction.
+## Key Features
+- **Data Loading and Cleaning**: 
+  - Consolidates multiple CSV files into a single DataFrame.
+  - Cleans column names and handles missing values.
+  - Removes duplicates and filters invalid data.
 
-## Project Objectives
-- Describe data to answer key questions and uncover insights.
-- Gain valuable insights to improve online retail performance.
-- Provide analytic insights and data-driven recommendations.
+- **Data Transformation**:
+  - Renames columns for better readability.
+  - Creates new columns such as `Gross` (calculated as `QuantityOrdered * CostOfGoodsSold`) and `MonthYear` for time-based analysis.
 
-## Your Challenge
-Your challenge in this project is to perform exploratory data analysis to make informed business decisions. This involves loading, cleaning, processing, analyzing, and visualizing the data. Additionally, you'll pose meaningful questions and seek answers using the provided dataset.
+- **Statistical Analysis**:
+  - Provides descriptive statistics for key metrics.
+  - Identifies outliers using Z-scores and removes them for cleaner analysis.
 
-## Dataset
-We'll be using a dataset containing all transactions that occurred between 01/12/2010 and 09/12/2011 for a UK-based and registered non-store online retail. This dataset provides a wealth of information that will allow us to extract valuable insights.
+- **Data Visualization**:
+  - Visualizes sales trends over time using line plots.
+  - Analyzes sales distribution by day of the week and month using bar charts.
+  - Displays gross amount distribution with box plots.
 
-## Getting Started
-To get started with this project, follow these steps:
+- **Insights Extraction**:
+  - Identifies the busiest month and day of the week for sales.
+  - Highlights the most valuable customers and products.
+  - Determines the top-performing regions based on sales.
 
-1. **Clone the Repository**: Clone this repository to your local machine using the following command:
-   
-2. **Install Dependencies**: Make sure you have Python installed on your machine. Install the required dependencies using:
+## Analysis Workflow
+1. **Load Data**:
+   - Combine CSV files from the `./projects/sales/sales/` directory into a single DataFrame.
+   - Preview the data using `df.head()` and inspect its structure with `df.info()`.
 
-3. **Explore the Notebook**: Open and explore the Jupyter Notebook `perform_eda_on_retail_data.ipynb`. This notebook contains the code for performing exploratory data analysis step by step.
+2. **Clean and Transform Data**:
+   - Standardize column names and handle missing values.
+   - Drop unnecessary columns like `OrderId` and `SKU`.
+   - Add calculated fields such as `Gross` and `MonthYear`.
 
-4. **Run the Notebook**: Execute the cells in the notebook to load, clean, process, analyze, and visualize the data. Feel free to modify and experiment with the code as needed.
+3. **Explore Data**:
+   - Analyze missing values and unique values per column.
+   - Group data by time periods (e.g., months) and categories (e.g., products, regions).
 
-5. **Share Your Findings**: Once you've completed your analysis, share your findings and insights with your team or stakeholders. You can also contribute to this repository by suggesting improvements or additional analyses.
+4. **Visualize Data**:
+   - Plot sales trends over time.
+   - Create bar charts for sales by day of the week and month.
+   - Use box plots to visualize the distribution of gross amounts.
 
-## Contributing
-If you have any suggestions, improvements, or additional analyses that you'd like to contribute, feel free to submit a pull request. Your contributions are highly appreciated!
+5. **Extract Insights**:
+   - Identify top customers, products, and regions.
+   - Highlight sales trends and patterns for decision-making.
 
-Let's dive into the data and uncover meaningful insights to drive business decisions in the world of online retail! 🛍️📊
+## Key Insights
+- The busiest month and day of the week for sales are identified.
+- The top 10 customers and products contributing to gross sales are highlighted.
+- The regions with the highest sales are determined.
 
+## Tools and Libraries
+- **Python**: Core programming language for analysis.
+- **Pandas**: Data manipulation and analysis.
+- **NumPy**: Numerical computations.
+- **Matplotlib** and **Seaborn**: Data visualization.
+- **Scipy**: Statistical analysis.
+
+## How to Run
+1. Ensure all required libraries are installed:
+   ```bash
+   pip install pandas numpy matplotlib seaborn scipy
